@@ -1,17 +1,18 @@
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{mathtools}
+
+% Theorem Environments
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{defn}{Definition}
+\newtheorem{example}{Example}
 
 
 \def\LatinUpper{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
 \def\LatinLower{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}
 
-
-% Greek symbol vectors
-\def\mydefgreek#1{\expandafter\def\csname v#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
-\def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
-   \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
-\mydefallgreek {alpha}{beta}{gamma}{delta}{epsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{chi}{psi}{omega}\mydefallgreek
 
 
 
@@ -47,6 +48,12 @@
 }
 
 
+% Greek symbol vectors
+\def\mydefgreek#1{\expandafter\def\csname v#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
+\def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
+   \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
+\mydefallgreek {alpha}{beta}{gamma}{delta}{epsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{chi}{psi}{omega}\mydefallgreek
+
 % Parentheses
 \newcommand{\bc}[1]{\left\{{#1}\right\}}
 \newcommand{\br}[1]{\left({#1}\right)}
@@ -57,29 +64,18 @@
 \newcommand{\bsd}[1]{\left\llbracket{#1}\right\rrbracket}
 \newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
 
-% Theorem Environments
-\newtheorem{thm}{Theorem}
-\newtheorem{lem}{Lemma}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{claim}{Claim}
-\newtheorem{prop}{Proposition}
-\newtheorem{remark}{Remark}
-\newtheorem{defn}{Definition}
-\newtheorem{eg}{Example}
-
-
-% Math ops
+% Vector notations
 \newcommand{\reals}{\mathbb{R}}
+
+%Important functions
 \newcommand{\sgn}[1]{\mathbf{sign}(#1)}
 \newcommand{\rank}[1]{\mathbf{rank}(#1)}
 \newcommand{\argmax}{\mathop{\mathbf{argmax}}}
 \newcommand{\argmin}{\mathop{\mathbf{argmin}}}
 \newcommand{\norm}[1]{\mathrm{\left\lVert#1\right\rVert}}
 
-
 % Complexity operators
 \newcommand{\bigO}[1]{{\cO}\br{{#1}}}
 \newcommand{\softO}[1]{\widetilde{\cO}\br{{#1}}}
 \newcommand{\Om}[1]{\Omega\br{{#1}}}
 \newcommand{\softOm}[1]{\tilde\Omega\br{{#1}}}
-
